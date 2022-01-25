@@ -1,5 +1,4 @@
-from os import system, chdir
-from sys import path
+from os import system
 from argparse import ArgumentParser
 from ipaddress import IPv4Network
 from threading import Thread
@@ -10,8 +9,6 @@ class Rumble:
         self.args = ArgumentParser()
         self.args.add_argument('target', help="Subnet in CIDR notation to deploy to", type=str)
         self.args = self.args.parse_args()
-
-        chdir(path[0])
 
         self.deploy()
     
@@ -37,4 +34,4 @@ class Rumble:
         def wmic(ip, command):
             system(f'wmic /node:{ip} process call create "{command}"')
 
-
+Rumble()
